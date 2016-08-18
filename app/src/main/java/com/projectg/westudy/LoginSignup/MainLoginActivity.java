@@ -13,5 +13,9 @@ public class MainLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
+
+        //Test code.
+        System.out.println("weStudy - the ultimate group study app.");
+
     }
 }
