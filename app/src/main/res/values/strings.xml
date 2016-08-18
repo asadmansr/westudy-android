@@ -1,10 +1,17 @@
 <resources>
     <string name="app_name">WeStudy</string>
 
-    <!--Login Page-->
+    <!--Main Login Page-->
     <string name="already_a_member">Already a member?</string>
     <string name="sign_in">Sign in</string>
     <string name="join_now">Join now</string>
     <string name="welcome_to_westudy">Welcome to WeStudy</string>
     <string name="discover_westudy">Discover study groups near you.</string>
+
+    <!--Login Page-->
+    <string name="create_account">Create a new account</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="email_address_hint">Email address</string>
+    <string name="password_hint">Password</string>
+    <string name="welcome_back">Welcome Back</string>
 </resources>

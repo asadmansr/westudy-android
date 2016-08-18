@@ -41,7 +41,7 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View view){
         switch (view.getId()){
             case R.id.sign_in_ll:
-                Snackbar.make(view, "ToDo: sign in", Snackbar.LENGTH_SHORT).show();
+                startActivity(LoginActivity.getIntent(MainLoginActivity.this));
                 break;
 
             case R.id.join_now_rl:
