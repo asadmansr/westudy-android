@@ -7,6 +7,8 @@ import com.projectg.westudy.R;
 
 public class MainLoginActivity extends AppCompatActivity {
 
+    //LoginActivity
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
