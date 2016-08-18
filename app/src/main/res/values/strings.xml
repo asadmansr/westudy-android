@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">WeStudy</string>
+
+    <!--Login Page-->
+    <string name="already_a_member">Already a member?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="join_now">Join now</string>
+    <string name="welcome_to_westudy">Welcome to WeStudy</string>
+    <string name="discover_westudy">Discover study groups near you.</string>
 </resources>
