@@ -32,10 +32,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         private RelativeLayout mSignInRl;
 
         private LoginViewHolder(View view, View.OnClickListener listener){
-            mEmailAddressEt = (EditText) view.findViewById(R.id.email_et);
+            mEmailAddressEt = (EditText) view.findViewById(R.id.name_et);
             mPasswordEt = (EditText) view.findViewById(R.id.pass_et);
             mForgotPasswordTv = (TextView) view.findViewById(R.id.forgot_password_tv);
-            mCreateAccountTv = (TextView) view.findViewById(R.id.create_account_tv);
+            mCreateAccountTv = (TextView) view.findViewById(R.id.already_member_tv);
             mSignInRl = (RelativeLayout) view.findViewById(R.id.sign_in_rl);
 
 
@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Snackbar.make(view, "ToDo: forgot password", Snackbar.LENGTH_SHORT).show();
                 break;
 
-            case R.id.create_account_tv:
+            case R.id.already_member_tv:
                 Snackbar.make(view, "ToDo: create account", Snackbar.LENGTH_SHORT).show();
                 break;
 
