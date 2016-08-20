@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginSignup.MainLoginActivity"
+            android:name=".LoginSignup.SplashActivity"
             android:theme="@style/LoginTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,14 +19,28 @@
         </activity>
 
         <activity
+            android:name=".LoginSignup.MainLoginActivity"
+            android:theme="@style/LoginTheme">
+        </activity>
+
+        <activity
             android:name=".LoginSignup.LoginActivity"
             android:theme="@style/LoginTheme">
-
         </activity>
+
         <activity
             android:name=".LoginSignup.NewAccountRegisterActivity"
             android:theme="@style/LoginTheme">
+        </activity>
 
+        <activity
+            android:name=".HomeDashboard.HomeActivity"
+            android:theme="@style/LoginTheme">
+        </activity>
+
+        <activity
+            android:name=".HomeDashboard.CreateProfileActivity"
+            android:theme="@style/LoginTheme">
         </activity>
     </application>
 

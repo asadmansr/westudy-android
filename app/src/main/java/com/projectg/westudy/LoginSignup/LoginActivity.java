@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.projectg.westudy.HomeDashboard.HomeActivity;
 import com.projectg.westudy.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -53,14 +54,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.already_member_tv:
-                //Snackbar.make(view, "join now", Snackbar.LENGTH_SHORT).show();
-                //TODO: Intent to go to NewAccountRegisterActivity
                 Intent intent = new Intent(this, NewAccountRegisterActivity.class);
                 startActivity(intent);
                 break;
 
             case R.id.sign_in_rl:
-                Snackbar.make(view, "ToDo: sign in", Snackbar.LENGTH_SHORT).show();
+                Intent home_intent = new Intent(this, HomeActivity.class);
+                startActivity(home_intent);
                 break;
         }
     }

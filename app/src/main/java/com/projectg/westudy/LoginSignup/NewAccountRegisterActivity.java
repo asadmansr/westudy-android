@@ -2,12 +2,12 @@ package com.projectg.westudy.LoginSignup;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.projectg.westudy.HomeDashboard.CreateProfileActivity;
 import com.projectg.westudy.R;
 
 /**
@@ -45,7 +45,8 @@ public class NewAccountRegisterActivity extends AppCompatActivity implements Vie
     public void onClick(View view){
         switch (view.getId()){
             case R.id.sign_in_rl:
-                Snackbar.make(view, "TODO: Home Page", Snackbar.LENGTH_SHORT).show();
+                Intent createProfile_intent = new Intent(this, CreateProfileActivity.class);
+                startActivity(createProfile_intent);
                 break;
 
             case R.id.already_member_tv:
@@ -58,6 +59,6 @@ public class NewAccountRegisterActivity extends AppCompatActivity implements Vie
     @Override
     public void onBackPressed(){
         Intent intent = new Intent(this, MainLoginActivity.class);
-        startActivity(intent);;
+        startActivity(intent);
     }
 }
