@@ -2,15 +2,15 @@ package com.projectg.westudy.LoginSignup;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.projectg.westudy.HomeDashboard.HomeActivity;
+import com.projectg.westudy.HomeDashboard.MapsActivity;
 import com.projectg.westudy.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.sign_in_rl:
-                Intent home_intent = new Intent(this, HomeActivity.class);
+                Intent home_intent = new Intent(this, MapsActivity.class);
                 startActivity(home_intent);
                 break;
         }

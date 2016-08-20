@@ -16,7 +16,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_placeholder);
 
-        //TODO: Implement Google Maps API
+        //TODO: Implement Dashboard here
 
     }
 

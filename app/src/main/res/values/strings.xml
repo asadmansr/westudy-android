@@ -27,4 +27,5 @@
     <string name="create_account_btn_text">CREATE ACCOUNT</string>
     <string name="name_tv">Albert Einstein</string>
     <string name="join_us_banner">Join us!</string>
+    <string name="google_app_id">AIzaSyCSVlBEwkcBoz-kj2U7ntKrWcLKT0_-5BM</string>
 </resources>
