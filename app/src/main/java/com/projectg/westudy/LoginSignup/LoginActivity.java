@@ -53,7 +53,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 break;
 
             case R.id.already_member_tv:
-                Snackbar.make(view, "ToDo: create account", Snackbar.LENGTH_SHORT).show();
+                //Snackbar.make(view, "join now", Snackbar.LENGTH_SHORT).show();
+                //TODO: Intent to go to NewAccountRegisterActivity
+                Intent intent = new Intent(this, NewAccountRegisterActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.sign_in_rl:

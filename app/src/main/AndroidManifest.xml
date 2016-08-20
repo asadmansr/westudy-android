@@ -23,6 +23,11 @@
             android:theme="@style/LoginTheme">
 
         </activity>
+        <activity
+            android:name=".LoginSignup.NewAccountRegisterActivity"
+            android:theme="@style/LoginTheme">
+
+        </activity>
     </application>
 
 </manifest>
