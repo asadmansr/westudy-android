@@ -7,4 +7,6 @@
     <color name="colorAppPrimary">#009688</color>
     <color name="colorAppPrimaryDark">#00796B</color>
     <color name="colorAppAccent">#00E676</color>
+    <color name="background_grey">#EFEEF1</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>

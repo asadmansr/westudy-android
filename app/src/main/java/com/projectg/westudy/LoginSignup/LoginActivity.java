@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.projectg.westudy.HomeDashboard.MapsActivity;
+import com.projectg.westudy.HomeDashboard.DashboardActivity;
 import com.projectg.westudy.R;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -56,10 +56,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.already_member_tv:
                 Intent intent = new Intent(this, NewAccountRegisterActivity.class);
                 startActivity(intent);
+                finish();
                 break;
 
             case R.id.sign_in_rl:
-                Intent home_intent = new Intent(this, MapsActivity.class);
+                Intent home_intent = new Intent(this, DashboardActivity.class);
                 startActivity(home_intent);
                 break;
         }

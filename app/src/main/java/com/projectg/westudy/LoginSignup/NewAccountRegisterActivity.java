@@ -48,18 +48,21 @@ public class NewAccountRegisterActivity extends AppCompatActivity implements Vie
                 //TODO: conditional to verify passwords match
                 Intent createProfile_intent = new Intent(this, CreateProfileActivity.class);
                 startActivity(createProfile_intent);
+                finish();
                 break;
 
             case R.id.already_member_tv:
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
+                finish();
                 break;
         }
     }
 
     @Override
     public void onBackPressed(){
-        Intent intent = new Intent(this, MainLoginActivity.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, MainLoginActivity.class);
+        //startActivity(intent);
+        finish();
     }
 }

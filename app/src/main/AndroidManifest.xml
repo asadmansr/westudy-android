@@ -6,7 +6,7 @@
      The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
      Google Maps Android API v2, but you must specify either coarse or fine
      location permissions for the 'MyLocation' functionality.
--->
+    -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -37,42 +37,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".LoginSignup.MainLoginActivity"
-            android:theme="@style/LoginTheme">
-        </activity>
-
+            android:theme="@style/LoginTheme" />
         <activity
             android:name=".LoginSignup.LoginActivity"
-            android:theme="@style/LoginTheme">
-        </activity>
-
+            android:theme="@style/LoginTheme" />
         <activity
             android:name=".LoginSignup.NewAccountRegisterActivity"
-            android:theme="@style/LoginTheme">
-        </activity>
-
+            android:theme="@style/LoginTheme" />
         <activity
             android:name=".HomeDashboard.HomeActivity"
-            android:theme="@style/LoginTheme">
-        </activity>
-
+            android:theme="@style/LoginTheme" />
         <activity
             android:name=".HomeDashboard.CreateProfileActivity"
-            android:theme="@style/LoginTheme">
-        </activity>
-
+            android:theme="@style/LoginTheme" />
         <activity
             android:name=".HomeDashboard.MapsActivity"
-            android:theme="@style/LoginTheme">
-        </activity>
+            android:theme="@style/LoginTheme" />
+        <activity
+            android:name=".HomeDashboard.CreatePreferenceActivity"
+            android:theme="@style/LoginTheme" />
 
-        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-        App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <!--
+        ATTENTION: This was auto-generated to add Google Play services to your project for
+        App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name=".HomeDashboard.DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
