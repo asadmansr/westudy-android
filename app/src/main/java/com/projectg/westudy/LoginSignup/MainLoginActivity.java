@@ -44,8 +44,6 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.join_now_rl:
-                //Snackbar.make(view, "join now", Snackbar.LENGTH_SHORT).show();
-                //TODO: Intent to go to NewAccountRegisterActivity
                 Intent intent = new Intent(this, NewAccountRegisterActivity.class);
                 startActivity(intent);
 

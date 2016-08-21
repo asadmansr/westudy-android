@@ -1,21 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorAppPrimary</item>
         <item name="colorPrimaryDark">@color/colorAppPrimaryDark</item>
-        <item name="colorAccent">@color/colorAppAccent</item>
+        <item name="colorAccent">@color/colorAppPrimary</item>
     </style>
 
     <style name="LoginTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorAppPrimary</item>
         <item name="colorPrimaryDark">@color/colorAppPrimaryDark</item>
-        <item name="colorAccent">@color/colorAppAccent</item>
+        <item name="colorAccent">@color/colorAppPrimary</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
+        <item name="windowActionBar">true</item>
         <item name="windowNoTitle">true</item>
     </style>
 

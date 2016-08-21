@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.2">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/profilepic5"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/profile_pic"
+            android:padding="10dp"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/edit_pf_pic_fab"
+            android:src="@drawable/ic_create_black_24dp"
+            android:scaleType="center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/profile_pic"
+            android:layout_alignEnd="@+id/profile_pic"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="15dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#e4e4e4"
+            android:id="@+id/create_pf_name_layout"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:id="@+id/ic_name"
+                android:layout_width="39dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/profilepic" />
+
+            <EditText
+                android:id="@+id/create_pf_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="18dp"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:textColor="#202020"
+                android:cursorVisible="false"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:hint="Full Name" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#e4e4e4"
+            android:id="@+id/create_pf_uni_layout"
+            android:layout_below="@+id/create_pf_name_layout"
+            android:layout_alignLeft="@+id/create_pf_name_layout"
+            android:layout_alignStart="@+id/create_pf_name_layout"
+            android:layout_alignRight="@+id/create_pf_name_layout"
+            android:layout_alignEnd="@+id/create_pf_name_layout"
+            android:layout_marginTop="15dp">
+
+            <ImageButton
+                android:id="@+id/ic_uni"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_uni" />
+
+            <EditText
+                android:id="@+id/create_pf_uni_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="18dp"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:textColor="#202020"
+                android:textSize="16sp"
+                android:cursorVisible="true"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:hint="University" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#e4e4e4"
+            android:id="@+id/create_pf_prgrm_layout"
+            android:layout_below="@+id/create_pf_uni_layout"
+            android:layout_alignLeft="@+id/create_pf_uni_layout"
+            android:layout_alignStart="@+id/create_pf_uni_layout"
+            android:layout_alignRight="@+id/create_pf_uni_layout"
+            android:layout_alignEnd="@+id/create_pf_uni_layout"
+            android:layout_marginTop="15dp">
+
+            <ImageButton
+                android:id="@+id/ic_prgm"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_program" />
+
+            <EditText
+                android:id="@+id/create_pf_prgrm_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="18dp"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:textColor="#202020"
+                android:textSize="16sp"
+                android:cursorVisible="true"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:hint="Program / Department" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#e4e4e4"
+            android:id="@+id/linearLayout4"
+            android:layout_below="@+id/create_pf_prgrm_layout"
+            android:layout_alignLeft="@+id/create_pf_prgrm_layout"
+            android:layout_alignStart="@+id/create_pf_prgrm_layout"
+            android:layout_marginTop="15dp"
+            android:layout_alignRight="@+id/create_pf_prgrm_layout"
+            android:layout_alignEnd="@+id/create_pf_prgrm_layout">
+
+            <ImageButton
+                android:id="@+id/ic_year"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/ic_year" />
+
+            <EditText
+                android:id="@+id/create_pf_prgrm_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="18dp"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:textColor="#202020"
+                android:textSize="16sp"
+                android:cursorVisible="true"
+                android:singleLine="true"
+                android:imeOptions="actionDone"
+                android:hint="Program Year" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/create_profile_continue_rl"
+            android:background="@drawable/green_button"
+            android:gravity="center"
+            android:layout_below="@+id/linearLayout4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_continue"
+                android:text="CONTINUE"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="#FFFFFF"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout >
+
+    </RelativeLayout>
+
+</LinearLayout>
