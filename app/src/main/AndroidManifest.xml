@@ -70,7 +70,14 @@
         <activity
             android:name=".HomeDashboard.DashboardActivity"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Profile.EditProfileActivity" />
+        <activity android:name=".Analytics.AnalyticsActivity" />
+        <activity android:name=".Events.AddEventActivity" />
+        <activity android:name=".History.HistoryActivity" />
+        <activity android:name=".Options.SettingsActivity" />
+        <activity android:name=".Options.AboutActivity" />
+        <activity android:name=".Options.HelpActivity"></activity>
     </application>
 
 </manifest>

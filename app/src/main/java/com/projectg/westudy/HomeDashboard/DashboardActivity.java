@@ -20,6 +20,13 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.projectg.westudy.Analytics.AnalyticsActivity;
+import com.projectg.westudy.Events.AddEventActivity;
+import com.projectg.westudy.History.HistoryActivity;
+import com.projectg.westudy.Options.AboutActivity;
+import com.projectg.westudy.Options.HelpActivity;
+import com.projectg.westudy.Options.SettingsActivity;
+import com.projectg.westudy.Profile.EditProfileActivity;
 import com.projectg.westudy.R;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,OnMapReadyCallback {
@@ -108,22 +115,35 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
 
-        } else if (id == R.id.nav_slideshow) {
+        if (id == R.id.nav_profile){
+            startActivity(EditProfileActivity.getIntent(this));
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_events){
+            startActivity(AddEventActivity.getIntent(this));
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_history){
+            startActivity(HistoryActivity.getIntent(this));
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_analytics){
+            startActivity(AnalyticsActivity.getIntent(this));
+
+        } else if (id == R.id.nav_settings){
+            startActivity(SettingsActivity.getIntent(this));
+
+        } else if (id == R.id.nav_about){
+            startActivity(AboutActivity.getIntent(this));
+
+        } else if (id == R.id.nav_help){
+            startActivity(HelpActivity.getIntent(this));
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+        //        android:checkableBehavior="single" took it out because it would be pre-selected
+
+
         return true;
     }
 }
