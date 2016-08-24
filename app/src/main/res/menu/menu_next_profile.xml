@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_onboarding_done"
+        android:id="@+id/action_next"
         android:orderInCategory="100"
-        android:title="Next"
+        android:title="@string/menu_next"
         app:showAsAction="always" />
 </menu>

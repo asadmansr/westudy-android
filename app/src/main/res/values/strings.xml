@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">WeStudy</string>
+    <!--Google Maps-->
+    <string name="google_app_id">AIzaSyCSVlBEwkcBoz-kj2U7ntKrWcLKT0_-5BM</string>
 
     <!--Main Login Activity-->
     <string name="already_a_member">Already a member?</string>
@@ -11,49 +13,58 @@
     <!--Login Activity-->
     <string name="create_account">Create a new account</string>
     <string name="forgot_password">Forgot password?</string>
-    <string name="email_address_hint">Email address</string>
-    <string name="password_hint">Password</string>
+    <string name="email_address_hint">jamescole@mcmaster.ca</string>
+    <string name="password_hint">********</string>
     <string name="welcome_back">Welcome Back</string>
     <string name="westudy">WeStudy</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
     <string name="create_account_btn">CREATE ACCOUNT</string>
     <string name="already_a_member_login">Already a member? Login</string>
-    <string name="regiester_pword_et">********</string>
     <string name="password">Password</string>
-    <string name="sample_email">aeinstein@mcmaster.ca</string>
     <string name="email_text">Email</string>
-    <string name="sample_name">Albert Einstein</string>
     <string name="create_account_btn_text">CREATE ACCOUNT</string>
-    <string name="name_tv">Albert Einstein</string>
     <string name="join_us_banner">Join us!</string>
-    <string name="google_app_id">AIzaSyCSVlBEwkcBoz-kj2U7ntKrWcLKT0_-5BM</string>
     <string name="confirm_password_tv">Confirm Password</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_dashboard">Dashboard</string>
 
     <!--Create Profile Activity-->
-    <string name="action_settings">Settings</string>
     <string name="profile_name">James Cole</string>
     <string name="profile_pic">hat_icon</string>
     <string name="university_tv">McMaster University</string>
     <string name="profile_program">Theoretical Physics</string>
     <string name="profile_year">Third Year</string>
-    <string name="next">Next</string>
+    <string name="menu_next">Next</string>
+    <string name="menu_done">Done</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="university_hint">University</string>
+    <string name="program_department_hint">Program/Department</string>
+    <string name="program_year_hint">Program Year</string>
+    <string name="connect_messaging_api">Connect to messaging API</string>
+    <string name="api_integration_btn">API Integration</string>
+
+    <!--Create Preference Activity-->
+    <string name="subject_header">Subject</string>
+    <string name="type_header">Type</string>
 
     <!--Left Menu Nav Drawer-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="user_name">James Cole</string>
-    <string name="user_rep"><b>Reputation:</b> 40</string>
+    <string name="user_rep">Reputation: 40</string>
     <string name="item_profile">Profile</string>
-    <string name="item_events">Events</string>
+    <string name="item_study_group">Study Group</string>
     <string name="item_history">History</string>
     <string name="item_analytics">Analytics <small><small><sup>BETA</sup></small></small></string>
     <string name="item_options">Options</string>
     <string name="item_settings">Settings</string>
     <string name="item_about">About</string>
     <string name="item_help">Help</string>
+
+    <!--Dashboard Screen-->
+    <string name="cant_find_status">Can\'t find a study group? Click the button on the right to create your own!</string>
+    <string name="search_study_group_hint">Search for study groups</string>
 
     <!--Study Session Types-->
     <string-array name="session_types_array">
@@ -64,5 +75,4 @@
         <item>Weekly Lecture Review</item>
         <item>Lab Prep</item>
     </string-array>
-
 </resources>

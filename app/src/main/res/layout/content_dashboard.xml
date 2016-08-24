@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/relative_container"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.projectg.westudy.HomeDashboard.Dashboard"
+    tools:context="com.projectg.westudy.HomeDashboard.DashboardActivity"
     tools:showIn="@layout/app_bar_dashboard">
 
     <LinearLayout
@@ -17,9 +18,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="0.85"
-            android:background="#c6c6c6"
-            >
+            android:layout_weight="0.87"
+            android:background="@drawable/shadow_effect">
 
             <fragment
                 xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,17 +31,25 @@
                 tools:context=".MapsActivity"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_gravity = "top" />
-
         </RelativeLayout>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0px"
-            android:layout_weight="0.15"
-            android:background="#FFFFFF">
+            android:layout_weight="0.13"
+            android:background="@drawable/shadow_effect">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cant_find_status"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="84dp"
+                android:layout_marginRight="84dp" />
         </RelativeLayout>
-
     </LinearLayout>
 
     <android.support.v7.widget.CardView
@@ -66,6 +74,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
                 android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
                 android:background="@drawable/ic_menu_black_24dp" />
 
             <EditText
@@ -74,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
                 android:layout_gravity="center"
                 android:maxLines="1"
                 android:textColor="#cccccc"
@@ -81,8 +91,39 @@
                 android:cursorVisible="false"
                 android:singleLine="true"
                 android:imeOptions="actionDone"
-                android:hint="Search for study groups" />
+                android:hint="@string/search_study_group_hint" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="0.83">
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="0.17">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/create_group_fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_group_add_white_24px" />
+
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

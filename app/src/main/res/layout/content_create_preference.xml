@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/relative_container"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.projectg.westudy.HomeDashboard.CreatePreferenceActivity"
-    tools:showIn="@layout/activity_create_perference">
+    tools:showIn="@layout/activity_create_preference">
 
 
     <LinearLayout
@@ -25,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/subject_tv"
-                android:text="Subject"
+                android:text="@string/subject_header"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="12dp"
@@ -75,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/type_tv"
-                android:text="Type"
+                android:text="@string/type_header"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="12dp"
@@ -115,4 +116,8 @@
             </GridView>
         </RelativeLayout>
     </LinearLayout>
+
+    <include
+        layout="@layout/error_layout"/>
+
 </RelativeLayout>

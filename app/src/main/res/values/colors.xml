@@ -9,4 +9,6 @@
     <color name="colorAppAccent">#00E676</color>
     <color name="background_grey">#EFEEF1</color>
     <color name="colorWhite">#FFFFFF</color>
+
+    <color name="error_layout">#d62d20</color>
 </resources>

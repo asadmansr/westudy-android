@@ -42,7 +42,8 @@
             android:theme="@style/LoginTheme" />
         <activity
             android:name=".LoginSignup.LoginActivity"
-            android:theme="@style/LoginTheme" />
+            android:theme="@style/LoginTheme"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".LoginSignup.NewAccountRegisterActivity"
             android:theme="@style/LoginTheme" />
@@ -53,7 +54,7 @@
             android:name=".HomeDashboard.CreateProfileActivity"
             android:theme="@style/LoginTheme" />
         <activity
-            android:name=".HomeDashboard.MapsFragmentActivity"
+            android:name=".HomeDashboard.MapsActivity"
             android:theme="@style/LoginTheme" />
         <activity
             android:name=".HomeDashboard.CreatePreferenceActivity"
@@ -71,13 +72,15 @@
             android:name=".HomeDashboard.DashboardActivity"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity android:name=".Profile.EditProfileActivity" />
         <activity android:name=".Analytics.AnalyticsActivity" />
-        <activity android:name=".StudyGroups.CreateStudyGroupActivity" />
         <activity android:name=".History.HistoryActivity" />
         <activity android:name=".Options.SettingsActivity" />
         <activity android:name=".Options.AboutActivity" />
-        <activity android:name=".Options.HelpActivity"></activity>
+        <activity android:name=".Options.HelpActivity" />
+        <activity android:name=".StudyGroups.CreateStudyGroupActivity" />
+        <activity android:name=".HomeDashboard.MapsFragmentActivity"></activity>
     </application>
 
 </manifest>

@@ -14,82 +14,109 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.projectg.westudy.R;
+import com.projectg.westudy.Utility.ErrorLayout;
 
 import java.util.ArrayList;
 
 public class CreatePreferenceActivity extends AppCompatActivity {
 
-    final String[] subjects_array = new String[] {"Math", "Physics","Chem", "Bio", "Geog", "Ling","Eng", "French", "Soc", "Art","History", "Antro" };
-    final String[] type_array = new String[] {"Review Session", "Assignment","Lab", "Quizzes"};
-    ArrayList<String> subject_list = new ArrayList<>();
-    ArrayList<String> type_list = new ArrayList<>();
+    private CreatePreferenceViewHolder mCreatePreferenceViewHolder;
+    private final String[] subjects_array = new String[] {"Math", "Physics","Chem", "Bio", "Geog", "Ling","Eng", "French", "Soc", "Art","History", "Antro" };
+    private final String[] type_array = new String[] {"Review Session", "Tutorial","Lab", "Quizzes"};
+    private ArrayList<String> subject_list = new ArrayList<>();
+    private ArrayList<String> type_list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_perference);
+        setContentView(R.layout.activity_create_preference);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Select Preference");
         setSupportActionBar(toolbar);
+        controlInitialization();
+    }
 
-        GridView subject_gridview = (GridView) findViewById(R.id.subject_grid);
-        GridView type_gridview = (GridView) findViewById(R.id.type_grid);
-        final TextView subject_selected = (TextView) findViewById(R.id.subject_selected_tv);
-        final TextView type_selected = (TextView) findViewById(R.id.type_selected_tv);
+    private void controlInitialization(){
+        mCreatePreferenceViewHolder = new CreatePreferenceViewHolder(findViewById(R.id.relative_container),this);
+    }
+
+    private class CreatePreferenceViewHolder{
+        private GridView subjectGridView, typeGridView;
+        private TextView subjectSelectedTv, typeSelectedTv;
+        private ErrorLayout mErrorLayout;
+
+        private CreatePreferenceViewHolder(View view, Context context){
+            mErrorLayout = new ErrorLayout(view, context);
+            subjectGridView = (GridView) view.findViewById(R.id.subject_grid);
+            typeGridView = (GridView) view.findViewById(R.id.type_grid);
+            subjectSelectedTv = (TextView) view.findViewById(R.id.subject_selected_tv);
+            typeSelectedTv = (TextView) view.findViewById(R.id.type_selected_tv);
+
+            subjectGridView.setAdapter(new GridViewAdapter(context, subjects_array));
+            typeGridView.setAdapter(new GridViewAdapter(context, type_array));
 
 
-        subject_gridview.setAdapter(new GridViewAdapter(this, subjects_array));
-        type_gridview.setAdapter(new GridViewAdapter(this, type_array));
+            subjectGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                    TextView subject_grid_title = (TextView) v.findViewById(R.id.circle_item_tv);
+                    RelativeLayout subject_grid_circle = (RelativeLayout) v.findViewById(R.id.circle_item_rl);
 
+                    if (subject_list.contains(subjects_array[position])){
+                        subject_list.remove(subjects_array[position]);
+                        subject_grid_title.setTextColor(getResources().getColor(R.color.colorAccent));
+                        subject_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.unselected_grid_circle));
+                    } else {
+                        subject_list.add(subjects_array[position]);
+                        subject_grid_title.setTextColor(getResources().getColor(R.color.colorWhite));
+                        subject_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.selected_grid_circle));
+                    }
 
-        subject_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                TextView subject_grid_title = (TextView) v.findViewById(R.id.circle_item_tv);
-                RelativeLayout subject_grid_circle = (RelativeLayout) v.findViewById(R.id.circle_item_rl);
-
-                if (subject_list.contains(subjects_array[position])){
-                    subject_list.remove(subjects_array[position]);
-                    subject_grid_title.setTextColor(getResources().getColor(R.color.colorAccent));
-                    subject_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.unselected_grid_circle));
-                } else {
-                    subject_list.add(subjects_array[position]);
-                    subject_grid_title.setTextColor(getResources().getColor(R.color.colorWhite));
-                    subject_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.selected_grid_circle));
+                    if (subject_list.size()>0){
+                        subjectSelectedTv.setVisibility(View.VISIBLE);
+                        subjectSelectedTv.setText(String.valueOf(subject_list.size())+" selected");
+                    } else {
+                        subjectSelectedTv.setVisibility(View.GONE);
+                    }
                 }
+            });
 
-                if (subject_list.size()>0){
-                    subject_selected.setVisibility(View.VISIBLE);
-                    subject_selected.setText(String.valueOf(subject_list.size())+" selected");
-                } else {
-                    subject_selected.setVisibility(View.GONE);
+            typeGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                    TextView type_grid_title = (TextView) v.findViewById(R.id.circle_item_tv);
+                    RelativeLayout type_grid_circle = (RelativeLayout) v.findViewById(R.id.circle_item_rl);
+
+                    if (type_list.contains(type_array[position])){
+                        type_list.remove(type_array[position]);
+                        type_grid_title.setTextColor(getResources().getColor(R.color.colorAccent));
+                        type_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.unselected_grid_circle));
+
+                    } else {
+                        type_list.add(type_array[position]);
+                        type_grid_title.setTextColor(getResources().getColor(R.color.colorWhite));
+                        type_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.selected_grid_circle));
+                    }
+
+                    if (type_list.size()>0){
+                        typeSelectedTv.setVisibility(View.VISIBLE);
+                        typeSelectedTv.setText(String.valueOf(type_list.size())+" selected");
+                    } else {
+                        typeSelectedTv.setVisibility(View.GONE);
+                    }
                 }
-            }
-        });
+            });
+        }
+    }
 
-        type_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                TextView type_grid_title = (TextView) v.findViewById(R.id.circle_item_tv);
-                RelativeLayout type_grid_circle = (RelativeLayout) v.findViewById(R.id.circle_item_rl);
+    private boolean validatePreferenceFields(){
+        if (subject_list.size() == 0){
+            mCreatePreferenceViewHolder.mErrorLayout.showError("Select at least one subject preference");
+            return false;
+        } else if (type_list.size() == 0){
+            mCreatePreferenceViewHolder.mErrorLayout.showError("Select at least one type preference");
+            return false;
+        }
 
-                if (type_list.contains(type_array[position])){
-                    type_list.remove(type_array[position]);
-                    type_grid_title.setTextColor(getResources().getColor(R.color.colorAccent));
-                    type_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.unselected_grid_circle));
-
-                } else {
-                    type_list.add(type_array[position]);
-                    type_grid_title.setTextColor(getResources().getColor(R.color.colorWhite));
-                    type_grid_circle.setBackgroundDrawable(getDrawable(R.drawable.selected_grid_circle));
-                }
-
-                if (type_list.size()>0){
-                    type_selected.setVisibility(View.VISIBLE);
-                    type_selected.setText(String.valueOf(type_list.size())+" selected");
-                } else {
-                    type_selected.setVisibility(View.GONE);
-                }
-            }
-        });
+        return true;
     }
 
     public static Intent getIntent(Context context){
@@ -99,25 +126,21 @@ public class CreatePreferenceActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_done_preference, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_onboarding_done) {
-            startActivity(DashboardActivity.getIntent(this));
-            finish();
+        if (id == R.id.action_done) {
+            if (validatePreferenceFields()) {
+                startActivity(DashboardActivity.getIntent(this));
+                finish();
+            }
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

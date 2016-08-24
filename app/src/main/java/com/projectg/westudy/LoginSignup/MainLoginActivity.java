@@ -44,9 +44,7 @@ public class MainLoginActivity extends AppCompatActivity implements View.OnClick
                 break;
 
             case R.id.join_now_rl:
-                Intent intent = new Intent(this, NewAccountRegisterActivity.class);
-                startActivity(intent);
-
+                startActivity(NewAccountRegisterActivity.getIntent(MainLoginActivity.this));
                 break;
         }
     }
