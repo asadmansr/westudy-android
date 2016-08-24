@@ -14,7 +14,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_placeholder);
+        setContentView(R.layout.activity_map);
 
         //TODO: Implement Dashboard here
 
