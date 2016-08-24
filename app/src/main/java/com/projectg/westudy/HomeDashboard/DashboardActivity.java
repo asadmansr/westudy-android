@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,12 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.projectg.westudy.Analytics.AnalyticsActivity;
 import com.projectg.westudy.History.HistoryActivity;
@@ -117,7 +121,45 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
         //Set default map centered at McMaster University's location
         LatLng mcmaster = new LatLng(43.261316, -79.919267);
+        LatLng mills = new LatLng(43.262727, -79.917812);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mcmaster, 17));
+
+        mMap.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
+            @Override
+            public View getInfoWindow(Marker marker) {
+                return null;
+            }
+
+            @Override
+            public View getInfoContents(Marker marker) {
+                String marker_info = marker.getTitle();
+                String[] marker_elem = marker_info.split(",");
+                View v = getLayoutInflater().inflate(R.layout.window_layout, null);
+                TextView titletv = (TextView) v.findViewById(R.id.tv_one);
+                TextView desctv = (TextView) v.findViewById(R.id.tv_two);
+                TextView groupsizetv = (TextView) v.findViewById(R.id.tv_three);
+                TextView timetv = (TextView) v.findViewById(R.id.tv_four);
+                titletv.setText(marker_elem[0]);
+                desctv.setText(marker_elem[1]);
+                groupsizetv.setText("Group size: "+marker_elem[2]+" out of "+marker_elem[3]);
+                timetv.setText("Time remaining: "+marker_elem[4] + " minutes");
+                return v;
+            }
+        });
+
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                Toast toast_fab = Toast.makeText(getApplicationContext(), marker.getTitle(), Toast.LENGTH_SHORT);
+                toast_fab.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+                toast_fab.show();
+
+            }
+        });
+        String study_group_0_id = "Econ Midterm 1 Review,Will cover chapters 1-5,4,8,55";
+        String study_group_1_id = "Physics tutorial 3 session,faraday law,2,6,30";
+        mMap.addMarker(new MarkerOptions().position(mcmaster).title(study_group_0_id));
+        mMap.addMarker(new MarkerOptions().position(mills).title(study_group_1_id));
     }
 
     @Override
@@ -133,7 +175,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(study_group_location, 18));
 
                 //TODO: Review what data needs to be received from CreateStudyGroupActivity
-                mMap.addMarker(new MarkerOptions().position(study_group_location).title("Your Study Group"));
+                String study_group_2_id = "Math 2Z03 Assignment,Mathlab assignment 2,3,5,42";
+                mMap.addMarker(new MarkerOptions().position(study_group_location).title(study_group_2_id));
 
             }
         }

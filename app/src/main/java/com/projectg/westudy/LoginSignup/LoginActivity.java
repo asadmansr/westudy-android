@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             mLoginViewHolder.mPasswordTv.setTextColor(getResources().getColor(R.color.error_layout));
             mLoginViewHolder.mErrorLayout.showError("Password must be at least six characters");
             return false;
-        } else if (!((email_address_str.contains("admin@mcmaster.ca")) | (password_str.contains("test")))){
+        } else if (!((email_address_str.contains("admin@mcmaster.ca")) & (password_str.contains("admintest")))){
             mLoginViewHolder.mEmailAddressTv.setTextColor(getResources().getColor(R.color.error_layout));
             mLoginViewHolder.mPasswordTv.setTextColor(getResources().getColor(R.color.error_layout));
             mLoginViewHolder.mErrorLayout.showError("Your credentials do not match our records");

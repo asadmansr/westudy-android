@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.projectg.westudy.R;
@@ -115,7 +114,7 @@ public class CreateProfileActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_next_profile, menu);
+        getMenuInflater().inflate(R.menu.menu_next_create_profile, menu);
         return true;
     }
 

@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relative_container"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.projectg.westudy.Profile.EditProfileActivity"
+    tools:showIn="@layout/activity_edit_profile">
 
-    <ImageView android:id="@+id/profilepic" android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/profilepic"
+        android:layout_width="match_parent"
         android:layout_height="230dp"
         android:src="@drawable/profilepic4"
         android:layout_gravity="center"
         android:contentDescription="@string/profile_pic"
         android:scaleType="centerCrop"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_margin="-100dp"
 
-    <ImageView android:id="@+id/editProfile" android:layout_width="30dp"
+        />
+
+    <ImageView
+        android:id="@+id/editProfile" android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@drawable/ic_menu_camera"
         android:layout_gravity="center"
         android:contentDescription="@string/profile_pic"
         android:scaleType="centerCrop"
+        android:visibility="gone"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -30,6 +40,8 @@
         android:layout_height="30dp"
         android:src="@drawable/abc_ic_ab_back_material"
         android:layout_gravity="center"
+        android:visibility="gone"
+
         android:contentDescription="@string/profile_pic"
         android:scaleType="centerCrop"
         android:layout_alignParentLeft="true"
@@ -109,6 +121,8 @@
         android:layout_gravity="bottom|end"
         android:layout_below="@+id/profilepic"
         android:layout_alignParentRight="true"
+        android:visibility="gone"
+
         android:layout_alignParentEnd="true"
         android:layout_marginTop="-20dp"
         android:layout_marginRight="5dp" />

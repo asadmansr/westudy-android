@@ -37,6 +37,7 @@
     <string name="profile_year">Third Year</string>
     <string name="menu_next">Next</string>
     <string name="menu_done">Done</string>
+    <string name="menu_edit">Edit</string>
     <string name="full_name_hint">Full Name</string>
     <string name="university_hint">University</string>
     <string name="program_department_hint">Program/Department</string>
