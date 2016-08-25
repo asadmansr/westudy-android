@@ -167,6 +167,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
 
+                //retrieve data from CreateStudyGroupActivity
                 String[] result = data.getStringArrayExtra("result");
                 Double Lat = Double.parseDouble(result[0]);
                 Double Lng = Double.parseDouble(result[1]);
@@ -175,7 +176,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(study_group_location, 18));
 
                 //TODO: Review what data needs to be received from CreateStudyGroupActivity
-                String study_group_2_id = "Math 2Z03 Assignment,Mathlab assignment 2,3,5,42";
+                String study_group_2_id = "Math 2Z03 Assignment,Matlab assignment 2,3,5,42";
                 mMap.addMarker(new MarkerOptions().position(study_group_location).title(study_group_2_id));
 
             }

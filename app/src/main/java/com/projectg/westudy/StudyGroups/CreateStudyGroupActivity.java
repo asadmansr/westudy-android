@@ -5,10 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.RelativeLayout;
-import android.widget.Spinner;
 
 import com.projectg.westudy.R;
 
@@ -30,25 +29,30 @@ public class CreateStudyGroupActivity extends AppCompatActivity implements View.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
 
+        //Toolbar for
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_studygroup);
+        toolbar.setTitle("Create Study Group");
+        setSupportActionBar(toolbar);
+
         //Create Spinner for Study Session Types
-        Spinner spinner = (Spinner) findViewById(R.id.study_types_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.session_types_array, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+//        Spinner spinner = (Spinner) findViewById(R.id.study_types_spinner);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.session_types_array, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
 
         controlInitialization();
 
     }
 
     private void controlInitialization(){
-        mMainViewHolder = new MainLoginViewHolder(findViewById(R.id.create_event_rl),this);
+        mMainViewHolder = new MainLoginViewHolder(findViewById(R.id.create_group_rl),this);
     }
 
     private class MainLoginViewHolder{
         private RelativeLayout mCreateEvent;
 
         private MainLoginViewHolder(View view, View.OnClickListener listener){
-            mCreateEvent = (RelativeLayout) view.findViewById(R.id.create_event_rl);
+            mCreateEvent = (RelativeLayout) view.findViewById(R.id.create_group_rl);
             mCreateEvent.setOnClickListener(listener);
         }
     }
@@ -56,7 +60,7 @@ public class CreateStudyGroupActivity extends AppCompatActivity implements View.
     @Override
     public void onClick(View view){
         switch (view.getId()){
-            case R.id.create_event_rl:
+            case R.id.create_group_rl:
                 //TODO: Have user turn on navigation to send their own location as opposed to "result"
                 String[] result = {"43.261072", "-79.922574"};
                 Intent returnIntent = new Intent();

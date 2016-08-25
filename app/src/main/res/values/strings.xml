@@ -66,6 +66,7 @@
     <!--Dashboard Screen-->
     <string name="cant_find_status">Can\'t find a study group? Click the button on the right to create your own!</string>
     <string name="search_study_group_hint">Search for study groups</string>
+    <string name="description">Description:\n<i>"We will be covering chapters 1 to 5. Bring your own textbook and laptop.</i></string>
 
     <!--Study Session Types-->
     <string-array name="session_types_array">

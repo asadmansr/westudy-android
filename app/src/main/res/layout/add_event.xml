@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relative_container"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.projectg.westudy.HomeDashboard.CreateProfileActivity"
+    tools:showIn="@layout/activity_add_event"
+    android:orientation="vertical"
+    android:paddingTop="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout">
+
+        <!--TITLE-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:background="#e1e1e1"
+            android:id="@+id/create_pf_name_layout"
+            android:layout_margin="15dp">
+
+            <EditText
+                android:id="@+id/create_pf_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@android:color/transparent"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:textColor="#202020"
+                android:cursorVisible="false"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:hint="Study Group Title"
+                />
+
+        </LinearLayout>
+
+        <!--DESCRIPTION-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/study_group_description_et"
+            android:padding="15dp"
+            android:layout_below="@+id/create_pf_name_layout"
+            android:layout_alignRight="@+id/create_pf_name_layout"
+            android:layout_alignEnd="@+id/create_pf_name_layout"
+            android:layout_alignLeft="@+id/create_pf_name_layout"
+            android:layout_alignStart="@+id/create_pf_name_layout"
+            android:layout_marginBottom="15dp"
+            android:background="#e1e1e1"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/study_group_description_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="0dp"
+                android:layout_gravity="center"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLines ="5"
+                android:maxLength ="2000"
+                android:textColor="#202020"
+                android:cursorVisible="false"
+                android:textSize="20sp"
+                android:singleLine="true"
+                android:imeOptions="actionNext"
+                android:hint="@string/description" />
+
+        </LinearLayout>
+
+        <!--STUDY REP & GROUP SIZE-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:id="@+id/sg_and_py"
+            android:layout_below="@+id/study_group_description_et"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp">
+
+            <!--Study Rep-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:id="@+id/create_pf_uni_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="#e1e1e1">
+
+                <ImageButton
+                    android:id="@+id/ic_uni"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@drawable/ic_star"
+                    android:baselineAlignBottom="false" />
+
+                <EditText
+                    android:id="@+id/create_pf_uni_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:textColor="#202020"
+                    android:textSize="18sp"
+                    android:cursorVisible="true"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:hint="Study Rep"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <!--Group Size-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="#e1e1e1"
+                android:id="@+id/linearLayout4"
+                android:layout_marginRight="15dp">
+
+                <ImageButton
+                    android:id="@+id/ic_year"
+                    android:layout_width="39dp"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/ic_year" />
+
+                <EditText
+                    android:id="@+id/create_pf_prgrm_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:textColor="#202020"
+                    android:textSize="18sp"
+                    android:cursorVisible="true"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
+                    android:hint="Group Size" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--PROGRAM YR & LOCATION-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:id="@+id/prgrm_and_location"
+            android:baselineAligned="false"
+            android:layout_below="@+id/sg_and_py"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="15dp">
+
+            <!--Year-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="#e1e1e1"
+                android:id="@+id/create_pf_uni_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <ImageButton
+                    android:id="@+id/ic_uni"
+                    android:layout_width="39dp"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@drawable/ic_uni"
+                    android:baselineAlignBottom="false" />
+
+                <EditText
+                    android:id="@+id/create_pf_uni_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:textColor="#202020"
+                    android:textSize="18sp"
+                    android:cursorVisible="true"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:hint="Year"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <!--Location-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:background="#e1e1e1"
+                android:id="@+id/linearLayout4"
+                android:layout_marginRight="15dp">
+
+                <ImageButton
+                    android:id="@+id/ic_year"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/ic_location" />
+
+                <EditText
+                    android:id="@+id/create_pf_prgrm_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:textColor="#202020"
+                    android:textSize="18sp"
+                    android:cursorVisible="true"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
+                    android:hint="Location" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--DURATION & ALL DAY-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:id="@+id/linearLayout"
+            android:baselineAligned="false"
+            android:layout_below="@+id/prgrm_and_location"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <!--Duration-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:orientation="horizontal"
+                android:background="#e1e1e1"
+                android:id="@+id/create_pf_uni_layout"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
+
+                <ImageButton
+                    android:id="@+id/ic_uni"
+                    android:layout_width="39dp"
+                    android:layout_height="39dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@android:drawable/ic_lock_idle_alarm"
+                    android:baselineAlignBottom="false" />
+
+                <EditText
+                    android:id="@+id/create_pf_uni_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_gravity="center"
+                    android:maxLines="1"
+                    android:textColor="#202020"
+                    android:textSize="18sp"
+                    android:cursorVisible="true"
+                    android:singleLine="true"
+                    android:imeOptions="actionNext"
+                    android:hint="Duration (min)"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <!--All Day switch-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                android:background="#e1e1e1"
+                android:id="@+id/linearLayout4"
+                android:layout_marginRight="15dp">
+
+
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="All day"
+                    android:gravity="center"
+                    android:id="@+id/all_day_switch"
+                    android:layout_margin="10dp"
+                    android:checked="false" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--Create Study Group Button-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/create_group_rl"
+            android:background="@drawable/green_button"
+            android:gravity="center"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignLeft="@+id/study_group_description_et"
+            android:layout_alignStart="@+id/study_group_description_et"
+            android:layout_marginTop="27dp"
+            android:layout_alignRight="@+id/study_group_description_et"
+            android:layout_alignEnd="@+id/study_group_description_et">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_continue"
+                android:text="CREATE STUDY GROUP"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="#FFFFFF"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold" />
+
+        </RelativeLayout >
+
+    </RelativeLayout>
+
+    <!--<include-->
+        <!--layout="@layout/error_layout"/>-->
+
+</RelativeLayout>
